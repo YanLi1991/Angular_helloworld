@@ -1,0 +1,13 @@
+// moved original code to the back file, this file is using the methods from superclass
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { DataService } from "./data.service";
+
+@Injectable({
+  providedIn: "root"
+})
+export class PostService extends DataService {
+  constructor(http: HttpClient) {
+    super("https://jsonplaceholder.typicode.com/posts", http);
+  }
+}
